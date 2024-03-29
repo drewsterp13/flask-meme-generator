@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main class="bg-warning text-center align-items-center d-flex flex-column justify-content-center">
+    <div class="w-50 bg-light mt-5 text-dark">
+        <h2 class="bg-dark text-light p-2">{{ current_user.username }}'s Profile</h2>
+        <h3>Info:</h3>
+        <ul class="list-unstyled d-flex flex-column justify-content-evenly">
+            <li class="text-center d-flex flex-column justify-content-evenly">USERNAME: {{ current_user.username }}</li>
+            <li class="text-center d-flex flex-column justify-content-evenly">FIRST NAME: {{ current_user.first_name }}</li>
+            <li class="text-center d-flex flex-column justify-content-evenly">LAST NAME: {{ current_user.last_name }}</li>
+            <li class="text-center d-flex flex-column justify-content-evenly">EMAIL: {{ current_user.email }}</li>
+            <li class="text-center d-flex flex-column justify-content-evenly">TOKEN: {{ current_user.token }}</li>
+        </ul>
+        <img class="w-75" src="..//static/images/profile.jpg" alt="MISSING IMAGE">
+    </div>
+</main>
+
+{% endblock %}
