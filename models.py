@@ -26,7 +26,7 @@ class User(db.Model, UserMixin):
     token = db.Column(db.String, default = " ", unique = True)
     date_created = db.Column(db.DateTime, nullable = False, default = datetime.now)
 
-    def __init__(self, first_name, last_name, username, email, password = " ", g_auth_verify = False, token = " ", id = " "):
+    def __init__(self, first_name, last_name, username, email, password = " ", g_auth_verify = False, token = " "):
         self.id = self.set_id()
         self.first_name = first_name
         self.last_name = last_name
