@@ -35,19 +35,19 @@ class User(db.Model, UserMixin):
         self.password = self.set_password(password)
         self.g_auth_verify = g_auth_verify
         self.token = self.set_token()
-        
-        def set_id(self):
-            return str(uuid.uuid4())
-        
-        def set_password(self, enter_password):
-            self.hash_password = generate_password_hash(enter_password)
-            return self.hash_password
-        
-        def set_token(self):
-            return secrets.token_hex(24)
-        
-        def __repr__(self):
-            return f"LOG: {self.first_name} {self.last_name} ({self.username}) Successfully created a new account"
+    
+    def set_id(self):
+        return str(uuid.uuid4())
+    
+    def set_password(self, enter_password):
+        self.hash_password = generate_password_hash(enter_password)
+        return self.hash_password
+    
+    def set_token(self):
+        return secrets.token_hex(24)
+    
+    def __repr__(self):
+        return f"LOG: {self.first_name} {self.last_name} ({self.username}) Successfully created a new account"
     
 class Photo(db.Model):
     id = db.Column(db.String, primary_key = True)
