@@ -75,7 +75,7 @@ def creatememe(your_token):
 
     meme = Meme(title, caption, photo_id, user_token = user_token)
 
-    db.session.init(meme)
+    db.session.add(meme)
     db.session.commit()
 
     response = meme_schema.dump(meme)
