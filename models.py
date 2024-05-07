@@ -61,10 +61,10 @@ class Photo(db.Model):
         self.link = link
         self.user_token = user_token
     
-    def set_id():
+    def set_id(self):
         return str(secrets.token_urlsafe())
     
-    def __repr__():
+    def __repr__(self):
         return f"LOG: Successfully added a new picture"
 
 class Meme(db.Model):
@@ -81,10 +81,10 @@ class Meme(db.Model):
         self.photo_id = photo_id
         self.user_token = user_token
     
-    def set_id():
+    def set_id(self):
         return str(secrets.token_urlsafe())
     
-    def __repr__():
+    def __repr__(self):
         return f"LOG: Successfully added a new meme :)"
 
 class PhotoSchema(ma.Schema):
