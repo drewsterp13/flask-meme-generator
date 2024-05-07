@@ -23,9 +23,11 @@ def signup():
             db.session.add(user)
             db.session.commit()
 
+            print(f"You have successfully created a new account. Welcome {username} to the memes :)")
             flash(f"You have successfully created a new account. Welcome {username} to the memes :)")
             return redirect(url_for("site.welcome"))
     except:
+        print("Sorry, invalid form data")
         raise Exception("Sorry, invalid form data")
     
     return render_template("sign_up.html", form=form)
